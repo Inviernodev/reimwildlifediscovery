@@ -20,9 +20,7 @@ public class actividadReciclaje: MonoBehaviour
 
     public GameObject[] Presprites = new GameObject[40];
     public GameObject[] Prefabs = new GameObject[17];
-    //public List<GameObject> myPrefabs = new List<GamebObject> { }
 
-    // This script will simply instantiate the Prefab when the game starts.
     void Start()
     {
         if (ScoreCounter.basuraValue == 0)
@@ -35,19 +33,7 @@ public class actividadReciclaje: MonoBehaviour
 
     void Update()
     {
-        //int x = Random.Range(0, 2);
-        //int lata = Random.Range(0, 75);
-        //int tuerca =
 
-        // for(int i=0; i<ScoreCounter.basuraValue; i++)
-        //if()
-        //if (myPrefab.activeSelf)
-        //{
-
-
-        //}
-        //if (myPrefab.acvtiveSelf!)
-        //{
         if (showB == false)
         {
             int x = Random.Range(0, 17);

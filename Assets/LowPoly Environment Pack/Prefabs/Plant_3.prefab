@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4844902911259396}
   - component: {fileID: 33358767380973702}
   - component: {fileID: 23304861493298046}
-  - component: {fileID: -7038948037436681145}
+  - component: {fileID: 2610654981390922809}
   m_Layer: 0
   m_Name: Plant_3
   m_TagString: Untagged
@@ -82,7 +82,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!205 &-7038948037436681145
+--- !u!205 &2610654981390922809
 LODGroup:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -92,11 +92,11 @@ LODGroup:
   serializedVersion: 2
   m_LocalReferencePoint: {x: 0.012930989, y: 0.09891072, z: -0.026602566}
   m_Size: 1.4209514
-  m_FadeMode: 1
-  m_AnimateCrossFading: 1
+  m_FadeMode: 0
+  m_AnimateCrossFading: 0
   m_LastLODIsBillboard: 0
   m_LODs:
-  - screenRelativeHeight: 0.076934025
+  - screenRelativeHeight: 0.036550652
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 23304861493298046}

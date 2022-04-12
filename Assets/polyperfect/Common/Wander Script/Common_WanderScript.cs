@@ -23,6 +23,7 @@ namespace PolyPerfect
         [SerializeField] private MovementState[] movementStates;
         [SerializeField] private AIState[] attackingStates;
         [SerializeField] private AIState[] deathStates;
+        
 
         [SerializeField] public string species = "NA";
 
@@ -31,6 +32,8 @@ namespace PolyPerfect
 
         [SerializeField, Tooltip("How far away from it's origin this animal will wander by itself.")]
         private float wanderZone = 10f;
+        [SerializeField] 
+        public string areaname;
 
         public float MaxDistance
         {
@@ -897,7 +900,7 @@ namespace PolyPerfect
             if (navMeshAgent)
             {
                 NavMeshHit hit;
-                if (!NavMesh.SamplePosition(targetPos, out hit, Mathf.Infinity, 1 << NavMesh.GetAreaFromName("Walkable")))
+                if (!NavMesh.SamplePosition(targetPos, out hit, Mathf.Infinity, 1 << NavMesh.GetAreaFromName(areaname)))
                 {
                     Debug.LogError("Unable to sample nav mesh. Please ensure there's a Nav Mesh layer with the name Walkable");
                     enabled = false;

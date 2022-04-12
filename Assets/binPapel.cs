@@ -18,14 +18,17 @@ public class binPapel : MonoBehaviour
             actividadReciclaje.imagenActiva.SetActive(false);
             if (actividadReciclaje.cont == ScoreCounter.basuraValue)
             {
+                // Inicio - mismo codigo en otros papeleros
                 GetCanvas.SetActive(false);
                 Debug.Log("end");
-
+                // Final
             }
         }
         else
         {
+            // Inicio Registrar Fallos
             Debug.Log("Fallo");
+            // Fin 
         }
     }
     //actividadReciclaje actre = new actividadReciclaje();

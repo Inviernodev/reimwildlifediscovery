@@ -31,7 +31,8 @@ namespace PolyPerfect
 
             //Get Strings
             SerializedProperty species = serializedObject.FindProperty("species");
-
+            SerializedProperty areaname = serializedObject.FindProperty("areaname");
+           
             //Get Stats
             SerializedProperty stats = serializedObject.FindProperty("stats");
 
@@ -66,6 +67,7 @@ namespace PolyPerfect
 
             //Draw The Species Name
             EditorGUILayout.PropertyField(species);
+            EditorGUILayout.PropertyField(areaname);
             EditorGUILayout.PropertyField(stats);
 
 

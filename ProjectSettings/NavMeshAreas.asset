@@ -11,11 +11,11 @@ NavMeshProjectSettings:
     cost: 1
   - name: Jump
     cost: 2
-  - name: WalkableLAND
+  - name: Gorilla1
     cost: 1
-  - name: 
+  - name: Gorilla2
     cost: 1
-  - name: 
+  - name: Ave1
     cost: 1
   - name: 
     cost: 1
@@ -108,5 +108,5 @@ NavMeshProjectSettings:
     debug:
       m_Flags: 0
   m_SettingNames:
-  - Fish
+  - Tierra
   - New Agent

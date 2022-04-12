@@ -39,7 +39,7 @@ public class ScoreCounter : MonoBehaviour
                 break;
 
         }
-        scoreText.text = "uLearnet Points: " + scoreValue;
+        scoreText.text = "" + scoreValue;
         basuraText.text = "Basura recogida: " +  basuraValue + "/" + basuraTotal;
     }
 }
