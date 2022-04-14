@@ -6,7 +6,7 @@ public class skinLoad : MonoBehaviour
 {
     // Start is called before the first frame update
 
-    public GameObject[] skins = new GameObject[15];
+    public GameObject[] skins = new GameObject[10];
     public GameObject GetCanvas;
 
     private void OnTriggerEnter(Collider other)

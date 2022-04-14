@@ -10,7 +10,10 @@ public class plataformasMove : MonoBehaviour
     [SerializeField]
     float z2;
     [SerializeField]
-    float z3;
+    float y2;
+    [SerializeField]
+    float x2;
+
 
     private GameObject target = null;
     private Vector3 offset;
@@ -20,8 +23,8 @@ public class plataformasMove : MonoBehaviour
         x = transform.position.x;
         y = transform.position.y;
         z = transform.position.z;
-        Vector3 pointA = new Vector3(x, y, z+z2);
-        Vector3 pointB = new Vector3(x, y, z-z3);
+        Vector3 pointA = new Vector3(x+x2, y+y2, z+z2);
+        Vector3 pointB = new Vector3(x-x2, y-y2, z-z2);
         transform.position = Vector3.Lerp(pointA, pointB, Mathf.PingPong(Time.time, 1));
     }
 
@@ -31,6 +34,7 @@ public class plataformasMove : MonoBehaviour
     }
     void OnTriggerEnter(Collider col)
     {
+        Debug.Log("ASDASDDS");
         target = col.gameObject;
         target.transform.SetParent(gameObject.transform, true);
     }

@@ -36,13 +36,11 @@ public class limpiarPagua : MonoBehaviour
             {
                 Debug.Log("2");
                 textError.text = "¡Insuficientes uLearnet points!";
-                dataScene.estadoi2 = false;
             }
         }
         else
         {
             textError.text = "¡Objeto no encontrado!";
-            dataScene.estadoi2 = false;
         }
 
     }

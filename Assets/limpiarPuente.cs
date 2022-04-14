@@ -38,13 +38,11 @@ public class limpiarPuente : MonoBehaviour
             {
                 Debug.Log("2");
                 textError.text = "¡Insuficientes uLearnet points!";
-                dataScene.estadoi1 = false;
             }
         }
         else
         {
             textError.text = "¡Objeto no encontrado!";
-            dataScene.estadoi1 = false;
         }
         
     }

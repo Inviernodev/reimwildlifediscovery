@@ -6,17 +6,16 @@ public class SkinPanel : MonoBehaviour
 {
     public int nskin;
     public GameObject skindefault;
-    public GameObject[] skins = new GameObject[15];
-    public GameObject[] skinpic = new GameObject[15];
+    public GameObject[] skins = new GameObject[10];
+    public GameObject[] skinpic = new GameObject[10];
     public GameObject GetCanvas;
-    public static GameObject seleccionada;
 
 
     // Start is called before the first frame update
     public void Start()
     {
         nskin = 0;
-        seleccionada = skinpic[0];
+        skinpic[nskin].SetActive(true);
     }
 
     public void UseSkin()
@@ -31,6 +30,7 @@ public class SkinPanel : MonoBehaviour
             skindefault.SetActive(false);
             GetCanvas.SetActive(false);
             skins[nskin].SetActive(true);
+            
             dataScene.skin = nskin;
          }
     }
@@ -55,5 +55,10 @@ public class SkinPanel : MonoBehaviour
             nskin = 0;
         }
         skinpic[nskin].SetActive(true);
+    }
+
+    public void closeCanvas()
+    {
+        GetCanvas.SetActive(false);
     }
 }

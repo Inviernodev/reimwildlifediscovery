@@ -29,13 +29,7 @@ public class dataScene : MonoBehaviour
         estadoi3 = false;
         skin = 0;
         upoints = 0;
-        Debug.Log(estadop1);
-        Debug.Log(estadop2);
-        Debug.Log(estadop3);
-        Debug.Log(estadoi1);
-        Debug.Log(estadoi2);
-        Debug.Log(estadoi3);
-        Debug.Log(skin);
+
     }
 
     private void Awake()

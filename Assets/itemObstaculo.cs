@@ -41,7 +41,7 @@ public class itemObstaculo : MonoBehaviour
                 int x = Random.Range(0, 3);
                 if (spawns[x].activeSelf)
                 {
-                    //spawn 
+                    //spawn agua
                     Instantiate(items[1], Spawners[x].position, Spawners[x].rotation);
                     spawns[x].SetActive(false);
                     fin = false;
@@ -60,7 +60,7 @@ public class itemObstaculo : MonoBehaviour
                 int x = Random.Range(2, 4);
                 if (spawns[x].activeSelf)
                 {
-                    //spawn Pala
+                    //spawn hacha
                     Instantiate(items[2], Spawners[x].position, Spawners[x].rotation);
                     spawns[x].SetActive(false);
                     fin = false;
