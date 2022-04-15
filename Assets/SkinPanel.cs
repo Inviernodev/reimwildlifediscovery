@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class SkinPanel : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class SkinPanel : MonoBehaviour
     public GameObject[] skins = new GameObject[10];
     public GameObject[] skinpic = new GameObject[10];
     public GameObject GetCanvas;
+    public TextMeshProUGUI precio;
 
 
     // Start is called before the first frame update
@@ -23,15 +25,23 @@ public class SkinPanel : MonoBehaviour
         skindefault = GameObject.FindWithTag("Player");
         if (skindefault.name == skins[nskin].name)
         {
+
             GetCanvas.SetActive(false);
         }
         else
         {
-            skindefault.SetActive(false);
-            GetCanvas.SetActive(false);
-            skins[nskin].SetActive(true);
-            
-            dataScene.skin = nskin;
+            if(dataScene.upoints >= int.Parse(precio.text))
+            {
+                skindefault.SetActive(false);
+                GetCanvas.SetActive(false);
+                skins[nskin].SetActive(true);
+                dataScene.skin = nskin;
+            }
+            else
+            {
+                precio.text = "¡Insuficientes uPoints!";
+            }
+
          }
     }
 
@@ -44,6 +54,39 @@ public class SkinPanel : MonoBehaviour
             nskin = skinpic.Length -1 ;
         }
         skinpic[nskin].SetActive(true);
+        switch (nskin)
+        {
+            case 0:
+                precio.text = "1000";
+                break;
+            case 1:
+                precio.text = "1000";
+                break;
+            case 2:
+                precio.text = "1500";
+                break;
+            case 3:
+                precio.text = "1500";
+                break;
+            case 4:
+                precio.text = "2000";
+                break;
+            case 5:
+                precio.text = "2000";
+                break;
+            case 6:
+                precio.text = "2500";
+                break;
+            case 7:
+                precio.text = "2500";
+                break;
+            case 8:
+                precio.text = "3000";
+                break;
+            case 9:
+                precio.text = "3000";
+                break;
+        }
     }
 
     public void clikkk()
@@ -55,6 +98,40 @@ public class SkinPanel : MonoBehaviour
             nskin = 0;
         }
         skinpic[nskin].SetActive(true);
+
+        switch (nskin)
+        {
+            case 0:
+                precio.text = "1000";
+                break;
+            case 1:
+                precio.text = "1000";
+                break;
+            case 2:
+                precio.text = "1500";
+                break;
+            case 3:
+                precio.text = "1500";
+                break;
+            case 4:
+                precio.text = "2000";
+                break;
+            case 5:
+                precio.text = "2000";
+                break;
+            case 6:
+                precio.text = "2500";
+                break;
+            case 7:
+                precio.text = "2500";
+                break;
+            case 8:
+                precio.text = "3000";
+                break;
+            case 9:
+                precio.text = "3000";
+                break;
+        }
     }
 
     public void closeCanvas()

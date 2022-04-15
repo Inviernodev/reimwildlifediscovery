@@ -11,10 +11,8 @@ public class itemObstaculo : MonoBehaviour
 
     void Start()
     {
-
-        if (dataScene.estadop1)
+        if (dataScene.estadop3)
         {
-
             fin = true;
 
             while (fin)
@@ -22,15 +20,16 @@ public class itemObstaculo : MonoBehaviour
                 int x = Random.Range(0, 2);
                 if (spawns[x].activeSelf)
                 {
-                    //spawn Pala
-                    Instantiate(items[0], Spawners[x].position, Spawners[x].rotation);
+                    //spawn hacha
+                    Instantiate(items[2], Spawners[x].position, Spawners[x].rotation);
                     spawns[x].SetActive(false);
                     fin = false;
                 }
             }
-            
-            
+
+
         }
+
 
         if (dataScene.estadop2)
         {
@@ -51,24 +50,28 @@ public class itemObstaculo : MonoBehaviour
 
         }
 
-        if (dataScene.estadop3)
+        if (dataScene.estadop1)
         {
-            fin=true;
+
+            fin = true;
 
             while (fin)
             {
-                int x = Random.Range(2, 4);
+                int x = Random.Range(0, 4);
                 if (spawns[x].activeSelf)
                 {
-                    //spawn hacha
-                    Instantiate(items[2], Spawners[x].position, Spawners[x].rotation);
+                    //spawn Pala
+                    Instantiate(items[0], Spawners[x].position, Spawners[x].rotation);
                     spawns[x].SetActive(false);
                     fin = false;
                 }
             }
-
-
+            
+            
         }
+
+
+        
     }
 
 }

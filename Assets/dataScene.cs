@@ -13,6 +13,16 @@ public class dataScene : MonoBehaviour
     public static bool estadoi3;
     public static int skin;
     public static int upoints;
+    public static bool estadob1;
+    public static bool estadob2;
+    public static bool estadob3;
+    public static bool estadob4;
+    public static bool estadob5;
+    public static bool estadob6;
+    public static bool estadob7;
+    public static bool estadob8;
+    public static bool estadob9;
+    public static bool estadob10;
 
     // Any data you want this script to have
 
@@ -29,6 +39,16 @@ public class dataScene : MonoBehaviour
         estadoi3 = false;
         skin = 0;
         upoints = 0;
+        estadob1 = true;
+        estadob2 = true;
+        estadob3 = true;
+        estadob4 = true;
+        estadob5 = true;
+        estadob6 = true;
+        estadob7 = true;
+        estadob8 = true;
+        estadob9 = true;
+        estadob10 = true;
 
     }
 
