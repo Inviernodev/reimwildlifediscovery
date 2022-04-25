@@ -1,0 +1,54 @@
+{
+    "name": "MobileControls",
+    "maps": [
+        {
+            "name": "Touch",
+            "id": "4a88b2a2-6c95-4890-8bf8-ede3d77ed980",
+            "actions": [
+                {
+                    "name": "Touch input",
+                    "type": "PassThrough",
+                    "id": "96e6a609-2323-4def-b899-0122f1cd2195",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "New action",
+                    "type": "Button",
+                    "id": "bea4fe6e-d13d-4cda-83d4-c910d4f5bc2b",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "f92ee0d4-226a-4dc7-b762-ecf046409773",
+                    "path": "<Touchscreen>/primaryTouch",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Touch input",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "4e3b362a-ed89-47d5-ad21-b4ce47463e67",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "New action",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}

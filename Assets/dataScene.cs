@@ -23,6 +23,7 @@ public class dataScene : MonoBehaviour
     public static bool estadob8;
     public static bool estadob9;
     public static bool estadob10;
+    public static int contador;
 
     // Any data you want this script to have
 
@@ -38,7 +39,8 @@ public class dataScene : MonoBehaviour
         estadoi2 = false;
         estadoi3 = false;
         skin = 0;
-        upoints = 0;
+        contador = 0;
+        upoints = 22220;
         estadob1 = true;
         estadob2 = true;
         estadob3 = true;

@@ -34,6 +34,7 @@ public class SkinPanel : MonoBehaviour
             {
                 skindefault.SetActive(false);
                 GetCanvas.SetActive(false);
+                dataScene.upoints = dataScene.upoints - int.Parse(precio.text);
                 skins[nskin].SetActive(true);
                 dataScene.skin = nskin;
             }
@@ -57,10 +58,10 @@ public class SkinPanel : MonoBehaviour
         switch (nskin)
         {
             case 0:
-                precio.text = "1000";
+                precio.text = "0";
                 break;
             case 1:
-                precio.text = "1000";
+                precio.text = "0";
                 break;
             case 2:
                 precio.text = "1500";
@@ -102,10 +103,10 @@ public class SkinPanel : MonoBehaviour
         switch (nskin)
         {
             case 0:
-                precio.text = "1000";
+                precio.text = "0";
                 break;
             case 1:
-                precio.text = "1000";
+                precio.text = "0";
                 break;
             case 2:
                 precio.text = "1500";

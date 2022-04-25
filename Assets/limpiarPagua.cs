@@ -30,6 +30,7 @@ public class limpiarPagua : MonoBehaviour
             {
                 Debug.Log("1");
                 dataScene.estadop2 = false;
+                dataScene.upoints = dataScene.upoints - price;
                 gameObject.SetActive(false);
             }
             else

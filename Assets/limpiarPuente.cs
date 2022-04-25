@@ -32,6 +32,7 @@ public class limpiarPuente : MonoBehaviour
             {
                 Debug.Log("1");
                 dataScene.estadop1 = false;
+                dataScene.upoints = dataScene.upoints - price;
                 gameObject.SetActive(false);
             }
             else

@@ -9,10 +9,16 @@ public class cargarActividad : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Player") || other.gameObject.CompareTag("Skin"))
+        if (other.gameObject.CompareTag("Player"))
         {
             SceneManager.LoadScene(nombrescene);
         }
 
     }
+
+    public void clickBtnexit()
+    {
+        SceneManager.LoadScene(nombrescene);
+    }
+
 }

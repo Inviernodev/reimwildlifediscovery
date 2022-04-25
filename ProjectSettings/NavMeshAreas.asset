@@ -21,25 +21,25 @@ NavMeshProjectSettings:
     cost: 1
   - name: Osopolar
     cost: 1
-  - name: 
+  - name: Lobo
     cost: 1
-  - name: 
+  - name: Venado
     cost: 1
-  - name: 
+  - name: Granja
     cost: 1
-  - name: 
+  - name: Ave2
     cost: 1
-  - name: 
+  - name: Conejo
     cost: 1
-  - name: 
+  - name: Paloma
     cost: 1
-  - name: 
+  - name: Aguila
     cost: 1
-  - name: 
+  - name: Jirafa
     cost: 1
-  - name: 
+  - name: Elefante
     cost: 1
-  - name: 
+  - name: Cocodrilo
     cost: 1
   - name: 
     cost: 1

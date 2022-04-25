@@ -29,6 +29,7 @@ public class limpiarPHacha : MonoBehaviour
             if (dataScene.upoints >= price)
             {
                 Debug.Log("1");
+                dataScene.upoints = dataScene.upoints - price;
                 dataScene.estadop3 = false;
                 gameObject.SetActive(false);
             }

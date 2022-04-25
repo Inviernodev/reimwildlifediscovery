@@ -11,38 +11,41 @@ public class triggerLimpiarBasura : MonoBehaviour
     public TextMeshProUGUI btn3;
     public TextMeshProUGUI preg;
     public TextMeshProUGUI[] btns = new TextMeshProUGUI[3];
-    public TextMeshProUGUI resp;
+    public string resp;
     public GameObject basura;
     public GameObject GetCanvas;
     int z;
     int x;
+    int basuranumero;
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Player") && dataScene.upoints >= 500)
         {
             GetCanvas.SetActive(true);
-            x = Random.Range(0, 2);
+            dataScene.upoints = dataScene.upoints - 500;
+            x = Random.Range(0, 2); // 0,30
+
             switch (x)
             {
                 case 0:
-                    preg.text = "¿Alternativa b correcta?";
+                    preg.text = "¿Cual animal es el mas grande entre estos?";
                     z = Random.Range(0, 3);
-                    btns[z].text = "B";
-                    resp.text = btns[z].text;
+                    btns[z].text = "Elefante";
+                    resp = btns[z].text;
                     switch (z)
                     {
                         case 0:
-                            btn2.text = "A";
-                            btn3.text = "C";
+                            btn2.text = "Gorila";
+                            btn3.text = "Lobo";
                             break;
                         case 1:
-                            btn1.text = "C";
-                            btn3.text = "A";
+                            btn1.text = "Oso polar";
+                            btn3.text = "Cocodrilo";
                             break;
                         case 2:
-                            btn1.text = "A";
-                            btn2.text = "C";
+                            btn1.text = "Cocodrilo";
+                            btn2.text = "Oso polar";
                             break;
                     }
                     break;
@@ -50,7 +53,7 @@ public class triggerLimpiarBasura : MonoBehaviour
                     preg.text = "¿En que hábitat existen glaciares?";
                     z = Random.Range(0, 3);
                     btns[z].text = "Polar";
-                    resp.text = btns[z].text;
+                    resp = btns[z].text;
                     switch (z)
                     {
                         case 0:
@@ -68,12 +71,154 @@ public class triggerLimpiarBasura : MonoBehaviour
                     }
                     break;
                 case 2:
-
+                    preg.text = "¿En que hábitat existen glaciares?";
+                    z = Random.Range(0, 3);
+                    btns[z].text = "Polar";
+                    resp = btns[z].text;
+                    switch (z)
+                    {
+                        case 0:
+                            btn2.text = "Desierto";
+                            btn3.text = "Bosque";
+                            break;
+                        case 1:
+                            btn1.text = "Montaña";
+                            btn3.text = "Sabana";
+                            break;
+                        case 2:
+                            btn1.text = "Sabana";
+                            btn2.text = "Bosque";
+                            break;
+                    }
                     break;
                 case 3:
-
+                    preg.text = "¿En que hábitat existen glaciares?";
+                    z = Random.Range(0, 3);
+                    btns[z].text = "Polar";
+                    resp = btns[z].text;
+                    switch (z)
+                    {
+                        case 0:
+                            btn2.text = "Desierto";
+                            btn3.text = "Bosque";
+                            break;
+                        case 1:
+                            btn1.text = "Montaña";
+                            btn3.text = "Sabana";
+                            break;
+                        case 2:
+                            btn1.text = "Sabana";
+                            btn2.text = "Bosque";
+                            break;
+                    }
                     break;
 
+                case 4:
+                    preg.text = "¿En que hábitat existen glaciares?";
+                    z = Random.Range(0, 3);
+                    btns[z].text = "Polar";
+                    resp = btns[z].text;
+                    switch (z)
+                    {
+                        case 0:
+                            btn2.text = "Desierto";
+                            btn3.text = "Bosque";
+                            break;
+                        case 1:
+                            btn1.text = "Montaña";
+                            btn3.text = "Sabana";
+                            break;
+                        case 2:
+                            btn1.text = "Sabana";
+                            btn2.text = "Bosque";
+                            break;
+                    }
+                    break;
+
+                case 5:
+                    preg.text = "¿En que hábitat existen glaciares?";
+                    z = Random.Range(0, 3);
+                    btns[z].text = "Polar";
+                    resp = btns[z].text;
+                    switch (z)
+                    {
+                        case 0:
+                            btn2.text = "Desierto";
+                            btn3.text = "Bosque";
+                            break;
+                        case 1:
+                            btn1.text = "Montaña";
+                            btn3.text = "Sabana";
+                            break;
+                        case 2:
+                            btn1.text = "Sabana";
+                            btn2.text = "Bosque";
+                            break;
+                    }
+                    break;
+                case 6:
+                    preg.text = "¿En que hábitat existen glaciares?";
+                    z = Random.Range(0, 3);
+                    btns[z].text = "Polar";
+                    resp = btns[z].text;
+                    switch (z)
+                    {
+                        case 0:
+                            btn2.text = "Desierto";
+                            btn3.text = "Bosque";
+                            break;
+                        case 1:
+                            btn1.text = "Montaña";
+                            btn3.text = "Sabana";
+                            break;
+                        case 2:
+                            btn1.text = "Sabana";
+                            btn2.text = "Bosque";
+                            break;
+                    }
+                    break;
+                case 7:
+                    preg.text = "¿En que hábitat existen glaciares?";
+                    z = Random.Range(0, 3);
+                    btns[z].text = "Polar";
+                    resp = btns[z].text;
+                    switch (z)
+                    {
+                        case 0:
+                            btn2.text = "Desierto";
+                            btn3.text = "Bosque";
+                            break;
+                        case 1:
+                            btn1.text = "Montaña";
+                            btn3.text = "Sabana";
+                            break;
+                        case 2:
+                            btn1.text = "Sabana";
+                            btn2.text = "Bosque";
+                            break;
+                    }
+                    break;
+                case 8:
+                    preg.text = "¿En que hábitat existen glaciares?";
+                    z = Random.Range(0, 3);
+                    btns[z].text = "Polar";
+                    resp = btns[z].text;
+                    switch (z)
+                    {
+                        case 0:
+                            btn2.text = "Desierto";
+                            btn3.text = "Bosque";
+                            break;
+                        case 1:
+                            btn1.text = "Montaña";
+                            btn3.text = "Sabana";
+                            break;
+                        case 2:
+                            btn1.text = "Sabana";
+                            btn2.text = "Bosque";
+                            break;
+                    }
+                    break;
             }
         }
     }
@@ -90,9 +235,49 @@ public class triggerLimpiarBasura : MonoBehaviour
     public void clickity1()
     {
 
-        if (resp.text == btns[0].text)
+        if (resp == btns[0].text)
         {
-            Debug.Log("11111111");
+            dataScene.contador = dataScene.contador + 1;
+            if (basura.name == "0")
+            {
+                dataScene.estadob1 = false;
+                Debug.Log(dataScene.estadob1);
+            }else if (basura.name == "1")
+            {
+                dataScene.estadob2 = false;
+            }
+            else if (basura.name == "2")
+            {
+                dataScene.estadob3 = false;
+            }
+            else if (basura.name == "3")
+            {
+                dataScene.estadob4 = false;
+            }
+            else if (basura.name == "4")
+            {
+                dataScene.estadob5 = false;
+            }
+            else if (basura.name == "5")
+            {
+                dataScene.estadob6 = false;
+            }
+            else if (basura.name == "6")
+            {
+                dataScene.estadob7 = false;
+            }
+            else if (basura.name == "7")
+            {
+                dataScene.estadob8 = false;
+            }
+            else if (basura.name == "8")
+            {
+                dataScene.estadob9 = false;
+            }
+            else if (basura.name == "9")
+            {
+                dataScene.estadob10 = false;
+            }
             basura.SetActive(false);
             //DataScene.estadob
         }
@@ -105,9 +290,50 @@ public class triggerLimpiarBasura : MonoBehaviour
     public void clickity2()
     {
 
-        if (resp.text == btns[1].text)
+        if (resp == btns[01].text)
         {
-            Debug.Log("2222222222");
+            dataScene.contador = dataScene.contador + 1;
+            if (basura.name == "0")
+            {
+                dataScene.estadob1 = false;
+                Debug.Log(dataScene.estadob1);
+            }
+            else if (basura.name == "(1")
+            {
+                dataScene.estadob2 = false;
+            }
+            else if (basura.name == "2")
+            {
+                dataScene.estadob3 = false;
+            }
+            else if (basura.name == "3")
+            {
+                dataScene.estadob4 = false;
+            }
+            else if (basura.name == "4")
+            {
+                dataScene.estadob5 = false;
+            }
+            else if (basura.name == "5")
+            {
+                dataScene.estadob6 = false;
+            }
+            else if (basura.name == "6")
+            {
+                dataScene.estadob7 = false;
+            }
+            else if (basura.name == "7")
+            {
+                dataScene.estadob8 = false;
+            }
+            else if (basura.name == "8")
+            {
+                dataScene.estadob9 = false;
+            }
+            else if (basura.name == "9")
+            {
+                dataScene.estadob10 = false;
+            }
             basura.SetActive(false);
             //DataScene.estadob
         }
@@ -119,9 +345,49 @@ public class triggerLimpiarBasura : MonoBehaviour
     public void clickity3()
     {
 
-        if (resp.text == btns[2].text)
+        if (resp == btns[2].text)
         {
-            Debug.Log("33333333");
+            dataScene.contador = dataScene.contador + 1;
+            if (basura.name == "0")
+            {
+                dataScene.estadob1 = false;
+            }
+            else if (basura.name == "1")
+            {
+                dataScene.estadob2 = false;
+            }
+            else if (basura.name == "2")
+            {
+                dataScene.estadob3 = false;
+            }
+            else if (basura.name == "3")
+            {
+                dataScene.estadob4 = false;
+            }
+            else if (basura.name == "4")
+            {
+                dataScene.estadob5 = false;
+            }
+            else if (basura.name == "5")
+            {
+                dataScene.estadob6 = false;
+            }
+            else if (basura.name == "6")
+            {
+                dataScene.estadob7 = false;
+            }
+            else if (basura.name == "7")
+            {
+                dataScene.estadob8 = false;
+            }
+            else if (basura.name == "8")
+            {
+                dataScene.estadob9 = false;
+            }
+            else if (basura.name == "9")
+            {
+                dataScene.estadob10 = false;
+            }
             basura.SetActive(false);
             //DataScene.estadob
         }
