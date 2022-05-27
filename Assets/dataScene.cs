@@ -31,6 +31,7 @@ public class dataScene : MonoBehaviour
     // initialize the Singleton instance
     private void Start()
     {
+        Screen.SetResolution(800, 480, true);
         //Estados puentes
         estadop1 = true;
         estadop2 = true;

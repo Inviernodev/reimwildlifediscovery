@@ -15,4 +15,7 @@ EditorBuildSettings:
     path: Assets/Scenes/ActividadDibujo.unity
     guid: 4ce4d4d4aeef2e54e97bb40827915db8
   m_configObjects:
+    com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: b3c8c59974f01bd418e351066c9f28fb, type: 2}
+    com.unity.adaptiveperformance.samsung.android.provider_settings: {fileID: 11400000, guid: e65143fa82576d348a9d8ea98644b4f5, type: 2}
+    com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000, guid: 924b48674795ac9498247a47a3435ced, type: 2}
     com.unity.input.settings: {fileID: 11400000, guid: 9e7be553448fa2546aea5752021cbcf7, type: 2}

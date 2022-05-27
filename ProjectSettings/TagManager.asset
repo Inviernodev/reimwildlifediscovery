@@ -10,6 +10,11 @@ TagManager:
   - CinemachineTarget
   - FxTemporaire
   - Skin
+  - Vidrio
+  - Metal
+  - Plastico
+  - Carton
+  - Madera
   layers:
   - Default
   - TransparentFX

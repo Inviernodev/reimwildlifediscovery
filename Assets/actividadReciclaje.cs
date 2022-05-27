@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 
 public class actividadReciclaje: MonoBehaviour
@@ -27,6 +28,7 @@ public class actividadReciclaje: MonoBehaviour
         {
             GetCanvas.SetActive(false);
             Debug.Log("end");//llamada a script texto que diga Continuar y estadisticas
+            SceneManager.LoadScene("MapaPrincipal");
         }
 
     }

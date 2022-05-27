@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class binMetal : MonoBehaviour
 {
@@ -16,16 +17,27 @@ public class binMetal : MonoBehaviour
             actividadReciclaje.showB = false;
             actividadReciclaje.cont++;
             actividadReciclaje.imagenActiva.SetActive(false);
+            dataScene.upoints = dataScene.upoints + 100; // aca
             if (actividadReciclaje.cont == ScoreCounter.basuraValue)
             {
                 GetCanvas.SetActive(false);
+                SceneManager.LoadScene("MapaPrincipal"); //aca
                 Debug.Log("end");
 
             }
         }
         else
         {
-            Debug.Log("Fallo");
+            Destroy(other.gameObject);
+            actividadReciclaje.showB = false;
+            actividadReciclaje.cont++;
+            actividadReciclaje.imagenActiva.SetActive(false);
+            if (actividadReciclaje.cont == ScoreCounter.basuraValue)
+            {
+                GetCanvas.SetActive(false);
+                SceneManager.LoadScene("MapaPrincipal"); //aca
+                Debug.Log("end");
+            }
         }
     }
 }

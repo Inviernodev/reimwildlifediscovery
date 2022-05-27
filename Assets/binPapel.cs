@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class binPapel : MonoBehaviour
 {
@@ -16,19 +17,28 @@ public class binPapel : MonoBehaviour
             actividadReciclaje.showB = false;
             actividadReciclaje.cont++;
             actividadReciclaje.imagenActiva.SetActive(false);
+            dataScene.upoints = dataScene.upoints + 100; // aca
             if (actividadReciclaje.cont == ScoreCounter.basuraValue)
             {
                 // Inicio - mismo codigo en otros papeleros
                 GetCanvas.SetActive(false);
+                SceneManager.LoadScene("MapaPrincipal"); //aca
                 Debug.Log("end");
                 // Final
             }
         }
         else
         {
-            // Inicio Registrar Fallos
-            Debug.Log("Fallo");
-            // Fin 
+            Destroy(other.gameObject);
+            actividadReciclaje.showB = false;
+            actividadReciclaje.cont++;
+            actividadReciclaje.imagenActiva.SetActive(false);
+            if (actividadReciclaje.cont == ScoreCounter.basuraValue)
+            {
+                GetCanvas.SetActive(false);
+                SceneManager.LoadScene("MapaPrincipal"); //aca
+                Debug.Log("end");
+            }
         }
     }
     //actividadReciclaje actre = new actividadReciclaje();
