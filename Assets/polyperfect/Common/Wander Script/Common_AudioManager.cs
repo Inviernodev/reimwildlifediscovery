@@ -33,6 +33,9 @@ namespace PolyPerfect
         AudioSource audioSource = soundObject.AddComponent<AudioSource>();
         audioSource.spatialBlend = 1f;
         audioSource.minDistance = instance.soundDistance;
+
+        audioSource.rolloffMode = AudioRolloffMode.Linear;// aca
+        audioSource.maxDistance = 200f; //editar esta linea
         audioSource.gameObject.SetActive(false);
         pool.Add(audioSource);
       }

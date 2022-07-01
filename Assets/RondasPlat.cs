@@ -10,6 +10,7 @@ public class RondasPlat : MonoBehaviour
     public Plataformas plat;
     public GameObject textotimer;
     public GameObject textotimer2;
+    public GameObject platprinci;
     [SerializeField] TextMeshProUGUI m_Object;
     public float targetTime = 6.0f;
 
@@ -32,7 +33,9 @@ public class RondasPlat : MonoBehaviour
         targetTime = 6.0f;
         textotimer.SetActive(false);
         plat.saveObj.SetActive(false);
+        platprinci.SetActive(false);
         textotimer2.SetActive(true);
+
     }
 
 

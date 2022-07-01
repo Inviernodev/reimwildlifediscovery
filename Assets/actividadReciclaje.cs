@@ -173,6 +173,6 @@ public class actividadReciclaje: MonoBehaviour
         //    Debug.Log("aaaaa");
         //}
 
-        recicladosText.text = "Reciclados: " + reci + "/" + ScoreCounter.basuraTotal;
+        recicladosText.text = "Reciclados: " + reci + "/" + ScoreCounter.basuraValue;
     }
 }

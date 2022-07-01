@@ -14,6 +14,8 @@ public class triggerLimpiarBasura : MonoBehaviour
     public string resp;
     public GameObject basura;
     public GameObject GetCanvas;
+    public GameObject GetCanvas3;
+    [SerializeField] TextMeshProUGUI GetCanvas2;
     int z;
     int x;
     int basuranumero;
@@ -24,7 +26,9 @@ public class triggerLimpiarBasura : MonoBehaviour
         {
             GetCanvas.SetActive(true);
             dataScene.upoints = dataScene.upoints - 500;
-            x = Random.Range(0, 2); // 0,30
+            GetCanvas2.text = "-500";
+            GetCanvas3.SetActive(true);
+            x = Random.Range(0, 3); // 0,30
 
             switch (x)
             {
@@ -71,9 +75,9 @@ public class triggerLimpiarBasura : MonoBehaviour
                     }
                     break;
                 case 2:
-                    preg.text = "¿En que hábitat existen glaciares?";
+                    preg.text = "¿En que hábitat se encuentran gorilas?";
                     z = Random.Range(0, 3);
-                    btns[z].text = "Polar";
+                    btns[z].text = "Jungla";
                     resp = btns[z].text;
                     switch (z)
                     {

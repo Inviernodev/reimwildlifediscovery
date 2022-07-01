@@ -14,6 +14,7 @@ public class Plataformas : MonoBehaviour
     public GameObject getcanvas;
     public GameObject textotimer;
     public GameObject textoronda;
+    public GameObject platprinci;
     [SerializeField] TextMeshProUGUI m_Object;
     public GameObject saveObj;
     public GameObject btn;
@@ -27,6 +28,7 @@ public class Plataformas : MonoBehaviour
 
     public void iniciarplat()
     {
+        platprinci.SetActive(true);
         btn.SetActive(false);
         //nxtronda = true;
         count = 0;
@@ -83,7 +85,7 @@ public class Plataformas : MonoBehaviour
         z = Random.Range(0, 14);
         objetos[0].SetActive(true);
         saveObj = objetos[0];
-        saveObj.gameObject.tag = "Vidrio";
+        //saveObj.gameObject.tag = "Vidrio";
         textotimer.SetActive(true);
         //se termina el tiempo y vuelven las plataformas a su defecto
 

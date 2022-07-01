@@ -11,7 +11,7 @@ public class Usuario
     public string id;
     public string loginame;
     public string password;
-    public string nombre;
+    public int nombre;
 }
 
 public class Login : MonoBehaviour
@@ -19,6 +19,7 @@ public class Login : MonoBehaviour
     
     public InputField userInput;
     public InputField passwordInput;
+    public static int user_id;
     public IEnumerator Post(Usuario usuario)
     {
         string urlAPI = cambiarApiServidor.URL + "/login";//"http://localhost:3002/api/login";
@@ -48,6 +49,8 @@ public class Login : MonoBehaviour
                         string id_user_aux = a[0];
                         string[] b = id_user_aux.Split(':');
                         string id_user = b[1];
+                        user_id = int.Parse(id_user);
+                        Debug.Log(user_id); // mod
                         //Conexiones.id_user = id_user;
                         //Debug.Log(Conexiones.id_user);
                         SceneManager.LoadScene("MapaPrincipal");
