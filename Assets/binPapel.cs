@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 using UnityEngine.Networking;
 using System;
 
+[Serializable]
+
 public class Respuesta
 {
     public int id_per;
@@ -18,11 +20,13 @@ public class Respuesta
     public float Eje_Z;
     public int correcta;
     public string resultado;
-    public int Tipo_Registro;
+    public string Tipo_Registro;
 }
 
 public class binPapel : MonoBehaviour
 {
+
+
     [SerializeField]
     public GameObject GetCanvas;
 
@@ -35,15 +39,17 @@ public class binPapel : MonoBehaviour
             actividadReciclaje.showB = false;
             actividadReciclaje.cont++;
             actividadReciclaje.imagenActiva.SetActive(false);
-            dataScene.upoints = dataScene.upoints + 100; // aca
+            dataScene.upoints = dataScene.upoints + 10; // aca
 
             agregar_correcta(); //aca
             if (actividadReciclaje.cont == ScoreCounter.basuraValue)
             {
                 // Inicio - mismo codigo en otros papeleros
                 GetCanvas.SetActive(false);
+                dataScene.upoints = dataScene.upoints + ScoreCounter.scoreValue;
+                TiempoxActividad.swit = 1;
                 SceneManager.LoadScene("MapaPrincipal"); //aca
-                Debug.Log("end");
+                
                 
                 // Final
             }
@@ -58,40 +64,37 @@ public class binPapel : MonoBehaviour
             if (actividadReciclaje.cont == ScoreCounter.basuraValue)
             {
                 GetCanvas.SetActive(false);
+                dataScene.upoints = dataScene.upoints + ScoreCounter.scoreValue;
+                TiempoxActividad.swit = 1;
                 SceneManager.LoadScene("MapaPrincipal"); //aca
-                Debug.Log("end");
             }
         }
     }
 
     public IEnumerator PostAdd(Respuesta respueston)
     {
-        string urlAPI = cambiarApiServidor.URL + "/alumno_respuesta/add"; //"http://localhost:3002/api/alumno_respuesta/add";
-        var jsonData = JsonUtility.ToJson(respueston);
-        //Debug.Log(jsonData);
+        string api = "https://7tv5uzrpoj.execute-api.sa-east-1.amazonaws.com/prod/api";
+        string apilocal = "http://localhost:3002/api";
+        string URL = api + "/alumno_respuesta/add";
 
-        using (UnityWebRequest www = UnityWebRequest.Post(urlAPI, jsonData))
+        var json = JsonUtility.ToJson(respueston);
+        using (UnityWebRequest www = UnityWebRequest.Post(URL, json))
         {
             www.SetRequestHeader("content-type", "application/json");
             www.uploadHandler.contentType = "application/json";
-            www.uploadHandler = new UploadHandlerRaw(System.Text.Encoding.UTF8.GetBytes(jsonData));
+            www.uploadHandler = new UploadHandlerRaw(System.Text.Encoding.UTF8.GetBytes(json));
             yield return www.SendWebRequest();
 
-            if (www.isNetworkError)
+            if (www.result == UnityWebRequest.Result.ConnectionError)
             {
                 Debug.Log(www.error);
-                Debug.Log("Error");
             }
             else
             {
+                var result = System.Text.Encoding.UTF8.GetString(www.downloadHandler.data);
                 if (www.isDone)
                 {
-                    var result = System.Text.Encoding.UTF8.GetString(www.downloadHandler.data);
-                    if (result != null)
-                    {
-                        //var id_txa = JsonUtility.FromJson<String>(result);
-                        //Debug.Log(id_txa);
-                    }
+                    Debug.Log(result);
                 }
             }
         }
@@ -113,8 +116,8 @@ public class binPapel : MonoBehaviour
         respuestini.Eje_Y = gameObject.transform.position.y;
         respuestini.Eje_Z = gameObject.transform.position.z;
         respuestini.correcta = 1;
-        respuestini.resultado = "No Aplica";
-        respuestini.Tipo_Registro = 0;
+        respuestini.resultado = "No aplica";
+        respuestini.Tipo_Registro = "1";
         StartCoroutine(PostAdd(respuestini));
     }
 
@@ -132,9 +135,9 @@ public class binPapel : MonoBehaviour
         respuestini.Eje_X = gameObject.transform.position.x;
         respuestini.Eje_Y = gameObject.transform.position.y;
         respuestini.Eje_Z = gameObject.transform.position.z;
-        respuestini.correcta = 2;
-        respuestini.resultado = "No Aplica";
-        respuestini.Tipo_Registro = 0;
+        respuestini.correcta = 0;
+        respuestini.resultado = "No aplica";
+        respuestini.Tipo_Registro = "0";
         StartCoroutine(PostAdd(respuestini));
     }
 

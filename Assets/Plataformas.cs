@@ -83,8 +83,8 @@ public class Plataformas : MonoBehaviour
         }
         getcanvas.SetActive(true);
         z = Random.Range(0, 14);
-        objetos[0].SetActive(true);
-        saveObj = objetos[0];
+        objetos[z].SetActive(true);
+        saveObj = objetos[z];
         //saveObj.gameObject.tag = "Vidrio";
         textotimer.SetActive(true);
         //se termina el tiempo y vuelven las plataformas a su defecto

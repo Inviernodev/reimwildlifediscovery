@@ -19,6 +19,7 @@ public class cargarActividad : MonoBehaviour
     public void clickBtnexit()
     {
         SceneManager.LoadScene(nombrescene);
+        TiempoxActividad.swit = 1;
     }
 
 }

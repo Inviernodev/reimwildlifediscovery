@@ -15,6 +15,7 @@ TagManager:
   - Plastico
   - Carton
   - Madera
+  - Tiempo
   layers:
   - Default
   - TransparentFX

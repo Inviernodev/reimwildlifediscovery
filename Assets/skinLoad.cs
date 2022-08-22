@@ -17,9 +17,7 @@ public class skinLoad : MonoBehaviour
             
             GetCanvas.SetActive(true);
 
-            
-
-            Debug.Log("TOUCH");
+          
         }
 
     }
@@ -34,7 +32,6 @@ public class skinLoad : MonoBehaviour
 
 
 
-            Debug.Log("TOUCH");
         }
 
     }

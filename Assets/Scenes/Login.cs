@@ -20,6 +20,7 @@ public class Login : MonoBehaviour
     public InputField userInput;
     public InputField passwordInput;
     public static int user_id;
+    static public string idSesion;
     public IEnumerator Post(Usuario usuario)
     {
         string urlAPI = cambiarApiServidor.URL + "/login";//"http://localhost:3002/api/login";
@@ -51,6 +52,9 @@ public class Login : MonoBehaviour
                         string id_user = b[1];
                         user_id = int.Parse(id_user);
                         Debug.Log(user_id); // mod
+                        Sesion sesion = new Sesion(user_id);
+                        idSesion = sesion.sesion_id;
+                        StartCoroutine(CreaSesion(sesion));
                         //Conexiones.id_user = id_user;
                         //Debug.Log(Conexiones.id_user);
                         SceneManager.LoadScene("MapaPrincipal");
@@ -59,6 +63,34 @@ public class Login : MonoBehaviour
             }
         }
     }
+
+    IEnumerator CreaSesion(Sesion sesion)
+    {
+        string api = "https://7tv5uzrpoj.execute-api.sa-east-1.amazonaws.com/prod/api";
+        string api2 = "http://localhost:3002/api";
+        string URL = api + "/asigna_reim_alumno/add";
+        var json = JsonUtility.ToJson(sesion);
+        using (UnityWebRequest www = UnityWebRequest.Post(URL, json))
+        {
+            www.SetRequestHeader("content-type", "application/json");
+            www.uploadHandler.contentType = "application/json";
+            www.uploadHandler = new UploadHandlerRaw(System.Text.Encoding.UTF8.GetBytes(json));
+            yield return www.SendWebRequest();
+            if (www.result == UnityWebRequest.Result.ConnectionError)
+            {
+                Debug.Log(www.error);
+            }
+            else
+            {
+                var result = System.Text.Encoding.UTF8.GetString(www.downloadHandler.data);
+                if (www.isDone)
+                {
+                    //Debug.Log(result);
+                }
+            }
+        }
+    }
+
     public void Logearse()
     {
         Usuario usuario;

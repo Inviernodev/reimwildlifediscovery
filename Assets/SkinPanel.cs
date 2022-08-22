@@ -11,6 +11,7 @@ public class SkinPanel : MonoBehaviour
     public GameObject[] skinpic = new GameObject[10];
     public GameObject GetCanvas;
     public TextMeshProUGUI precio;
+    public GameObject target;
 
 
     // Start is called before the first frame update
