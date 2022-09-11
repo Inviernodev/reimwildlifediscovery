@@ -29,7 +29,7 @@ public class BasuraReward : MonoBehaviour
     {
         if (other.gameObject.tag == "Basura")
         {
-            ScoreCounter.scoreValue += 10;
+            ScoreCounter.scoreValue += 20;
             ScoreCounter.basuraValue += 1;
             agregar_correcta(); // aca
             Destroy(other.gameObject);

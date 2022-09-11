@@ -42,7 +42,7 @@ public class dataScene : MonoBehaviour
         estadoi3 = false;
         skin = 0;
         contador = 0;
-        upoints = 22220;
+        upoints = 500;
         estadob1 = true;
         estadob2 = true;
         estadob3 = true;

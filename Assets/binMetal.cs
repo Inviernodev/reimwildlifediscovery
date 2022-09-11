@@ -39,7 +39,7 @@ public class binMetal : MonoBehaviour
             actividadReciclaje.showB = false;
             actividadReciclaje.cont++;
             actividadReciclaje.imagenActiva.SetActive(false);
-            dataScene.upoints = dataScene.upoints + 10; // aca
+            dataScene.upoints = dataScene.upoints + 20; // aca
             agregar_correcta(); //aca
             if (actividadReciclaje.cont == ScoreCounter.basuraValue)
             {

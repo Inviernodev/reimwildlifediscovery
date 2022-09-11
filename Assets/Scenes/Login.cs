@@ -23,7 +23,7 @@ public class Login : MonoBehaviour
     static public string idSesion;
     public IEnumerator Post(Usuario usuario)
     {
-        string urlAPI = cambiarApiServidor.URL + "/login";//"http://localhost:3002/api/login";
+        string urlAPI = cambiarApiServidor.URL + "/login";//cambiarApiservidor = https://7tv5uzrpoj.execute-api.sa-east-1.amazonaws.com/prod/api
         var jsonData = JsonUtility.ToJson(usuario);
 
         using (UnityWebRequest www = UnityWebRequest.Post(urlAPI,jsonData))
