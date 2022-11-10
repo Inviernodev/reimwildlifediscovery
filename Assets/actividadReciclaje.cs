@@ -28,6 +28,7 @@ public class actividadReciclaje: MonoBehaviour
         {
             GetCanvas.SetActive(false);
             Debug.Log("end");//llamada a script texto que diga Continuar y estadisticas
+            TiempoxActividad.swit = 1;
             SceneManager.LoadScene("MapaPrincipal");
         }
 

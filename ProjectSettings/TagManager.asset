@@ -16,6 +16,8 @@ TagManager:
   - Carton
   - Madera
   - Tiempo
+  - Tiempo2
+  - uiobjetos
   layers:
   - Default
   - TransparentFX

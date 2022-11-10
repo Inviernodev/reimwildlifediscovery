@@ -65,10 +65,10 @@ public class SkinPanel : MonoBehaviour
                 precio.text = "0";
                 break;
             case 2:
-                precio.text = "1500";
+                precio.text = "0";
                 break;
             case 3:
-                precio.text = "1500";
+                precio.text = "0";
                 break;
             case 4:
                 precio.text = "2000";
@@ -110,10 +110,10 @@ public class SkinPanel : MonoBehaviour
                 precio.text = "0";
                 break;
             case 2:
-                precio.text = "1500";
+                precio.text = "0";
                 break;
             case 3:
-                precio.text = "1500";
+                precio.text = "0";
                 break;
             case 4:
                 precio.text = "2000";

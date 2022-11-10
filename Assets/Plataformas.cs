@@ -12,27 +12,40 @@ public class Plataformas : MonoBehaviour
     public Material[] material = new Material[5];
     public Material materialdefecto;
     public GameObject getcanvas;
+    public GameObject getcanvas2;
     public GameObject textotimer;
     public GameObject textoronda;
     public GameObject platprinci;
     [SerializeField] TextMeshProUGUI m_Object;
     public GameObject saveObj;
-    public GameObject btn;
+    //public GameObject btn;
     public bool caido;
+    public bool conta;
+    public GameObject Tiempo;
+    public GameObject moverplat;
+    public GameObject letrero;
 
 
     int x;
     int z;
-    int count;
+    public int count;
     //public float targettime = 10.0f;
 
     public void iniciarplat()
     {
+        getcanvas2.SetActive(false);
+        letrero.SetActive(false);
+        Tiempo.SetActive(true);
+        Instantiate(Tiempo);
+        //dataScene.upoints = dataScene.upoints - 100;
+        Tiempo.SetActive(false);
+
         platprinci.SetActive(true);
-        btn.SetActive(false);
+        //btn.SetActive(false);
         //nxtronda = true;
         count = 0;
         caido = false;
+        moverplat.SetActive(true);
         iniciarronda();
         //starttime = time.time;
         //if (time = 10f)
@@ -46,6 +59,8 @@ public class Plataformas : MonoBehaviour
 
     public void iniciarronda()
     {
+        
+        conta = true;
         count++;
         textoronda.SetActive(true);
         m_Object.text = count.ToString("f0");
@@ -53,26 +68,26 @@ public class Plataformas : MonoBehaviour
         for (int i = 0; i < plataformaspawn.Length; i++)
         {
             plataformaspawn[i].SetActive(true);
-            x = Random.Range(0, 4);
+            x = Random.Range(0, 5);
             switch (x)
             {
-                case 1:
+                case 0:
                     plataformaspawn[i].GetComponent<MeshRenderer>().material = material[0];
                     plataformaspawn[i].gameObject.tag = "Vidrio";
                     break;
-                case 2:
+                case 1:
                     plataformaspawn[i].GetComponent<MeshRenderer>().material = material[1];
                     plataformaspawn[i].gameObject.tag = "Madera";
                     break;
-                case 3:
+                case 2:
                     plataformaspawn[i].GetComponent<MeshRenderer>().material = material[2];
                     plataformaspawn[i].gameObject.tag = "Carton";
                     break;
-                case 4:
+                case 3:
                     plataformaspawn[i].GetComponent<MeshRenderer>().material = material[3];
                     plataformaspawn[i].gameObject.tag = "Metal";
                     break;
-                case 5:
+                case 4:
                     plataformaspawn[i].GetComponent<MeshRenderer>().material = material[4];
                     plataformaspawn[i].gameObject.tag = "Plastico";
                     break;
@@ -81,8 +96,26 @@ public class Plataformas : MonoBehaviour
 
 
         }
+
         getcanvas.SetActive(true);
-        z = Random.Range(0, 14);
+        //z = Random.Range(0, 14);
+        while (conta)
+        {
+
+            z = Random.Range(0, 14);
+            Debug.Log("paso y Z ES: " + z );
+
+            for (int i = 0; i < plataformaspawn.Length; i++)
+            {
+                if (objetos[z].CompareTag(plataformaspawn[i].gameObject.tag) == true)
+                {
+                    Debug.Log("Conta falso, ENCONTRO OBJETO Y PLATAFORMA");
+                    conta = false;
+                    break;
+                }
+            }
+        }
+
         objetos[z].SetActive(true);
         saveObj = objetos[z];
         //saveObj.gameObject.tag = "Vidrio";
