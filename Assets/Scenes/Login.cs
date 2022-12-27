@@ -5,6 +5,8 @@ using UnityEngine.UI;
 using UnityEngine.Networking;
 using UnityEngine.SceneManagement;
 using System;
+
+
 [Serializable]
 public class Usuario
 {
@@ -23,8 +25,10 @@ public class Login : MonoBehaviour
     static public string idSesion;
     public IEnumerator Post(Usuario usuario)
     {
-        string urlAPI = cambiarApiServidor.URL + "/login";//cambiarApiservidor = https://7tv5uzrpoj.execute-api.sa-east-1.amazonaws.com/prod/api
+        string urlAPI = cambiarApiServidor.URL + "/login" ;//cambiarApiservidor = https://7tv5uzrpoj.execute-api.sa-east-1.amazonaws.com/prod/api
         var jsonData = JsonUtility.ToJson(usuario);
+        Debug.Log(jsonData); // mod
+        Debug.Log(cambiarApiServidor.URL); // mod
 
         using (UnityWebRequest www = UnityWebRequest.Post(urlAPI,jsonData))
         {
@@ -40,18 +44,26 @@ public class Login : MonoBehaviour
             }
             else
             {
-                if(www.isDone)
+                var result = System.Text.Encoding.UTF8.GetString(www.downloadHandler.data);
+                if (www.isDone)
                 {
-                    var result = System.Text.Encoding.UTF8.GetString(www.downloadHandler.data);
-                    if(result!=null)
+                    Debug.Log(www.error);
+                    
+                    Debug.Log(result); // mod
+                    if (result!=null)
                     {
-                        var usuarios = JsonUtility.FromJson<Usuario>(result);
+
+                        Debug.Log("-------------------------------"); // mod
+                        
+                        var usuarios = JsonUtility.FromJson<Usuario>(result); // ERROR
+                        Debug.Log(usuarios); // mod
                         string[] a = result.ToString().Split(',');
                         string id_user_aux = a[0];
                         string[] b = id_user_aux.Split(':');
                         string id_user = b[1];
                         user_id = int.Parse(id_user);
                         Debug.Log(user_id); // mod
+                        
                         Sesion sesion = new Sesion(user_id);
                         idSesion = sesion.sesion_id;
                         StartCoroutine(CreaSesion(sesion));
