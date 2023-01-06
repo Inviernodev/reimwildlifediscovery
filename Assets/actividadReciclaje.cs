@@ -40,7 +40,7 @@ public class actividadReciclaje: MonoBehaviour
         if (showB == false)
         {
             int x = Random.Range(0, 17);
-            basura = Instantiate(Prefabs[x], new Vector3(337, 28, 104), Quaternion.identity);
+            basura = Instantiate(Prefabs[x], new Vector3(338, 28, 104), Quaternion.identity);
             showB = true;
             switch (x)
             {
